@@ -1,0 +1,90 @@
+	
+// slider top  
+$(".carousel").swipe({
+
+  swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+
+    if (direction == 'left') $(this).carousel('next');
+    if (direction == 'right') $(this).carousel('prev');
+
+  },
+  allowPageScroll:"vertical"
+
+});
+ 
+// slider champ  
+jQuery('.slider-champ').lbSlider({
+    leftBtn: '.s-left',
+    rightBtn: '.s-right',
+    visible: 4,
+    autoPlay: true,
+    autoPlayDelay: 5
+});
+// tab champ on week
+ $(document).ready(function() {
+    $(".tabs-champ a").click(function(event) {
+        event.preventDefault();
+        $(this).parent().addClass("current");
+        $(this).parent().siblings().removeClass("current");
+        var tab = $(this).attr("href");
+        $(".champ-content").not(tab).css("display", "none");
+        $(tab).fadeIn();
+    });
+});
+
+// tab all
+ $(document).ready(function() {
+    $(".tabs-all a").click(function(event) {
+        event.preventDefault();
+        $(this).parent().addClass("current");
+        $(this).parent().siblings().removeClass("current");
+        var tab = $(this).attr("href");
+        $(".tabs-content").not(tab).css("display", "none");
+        $(tab).fadeIn();
+    });
+});
+
+$(document).ready(function() {
+   $(".cont-skill > #tab-4").hide();
+});
+
+
+// tab all
+ $(document).ready(function() {
+    $(".skin a").click(function(event) {
+        event.preventDefault();
+        $(this).parent().addClass("current");
+        $(this).parent().siblings().removeClass("current");
+        var tab = $(this).attr("href");
+        $(".cont-skin .tabs-content-skin").not(tab).css("display", "none");
+        $(tab).fadeIn();
+    });
+});
+
+// tab all
+       jQuery(document).ready(function ($) {
+            /*  jQuery activation and setting options. Visit docs.zozoui.com/accordion for 
+                complete documentation, option list, public methods, callback events.*/
+            $("#map-accordion").zozoAccordion({                
+                orientation: "horizontal",
+                active: 0,
+				height: 410,
+				sectionSpacing: 0,               
+                headerSize: 75,
+                responsive: true,
+                minWindowWidth: 700,
+                vertical: {
+                    headerSize: 70,
+                },
+                scrollable: false,
+                animation: {
+                    easing: "easeOutQuart",
+                    duration: 600
+                }
+            });
+        });
+// select
+ $(document).ready(function() {
+	  $('select').niceSelect();
+	});
+
